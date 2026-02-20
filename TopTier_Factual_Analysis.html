@@ -230,7 +230,7 @@ hr {
 <p class="subtitle">
 株式会社トップティア ｜ 内部経営データに基づくファクトフルネス分析<br>
 データソース：経営管理(旧_売上管理).xlsx ダッシュボード・PL(実績計画)シート<br>
-分析期間：2024年7月〜2026年2月（20ヶ月分の実績データ）
+分析期間：2024年7月〜2026年1月（19ヶ月分の実績データ）
 </p>
 
 <!-- ===== KPI SUMMARY ===== -->
@@ -244,8 +244,8 @@ hr {
     <span class="kpi-label">半期成長率（H2 vs H1 2025）</span>
   </div>
   <div class="kpi-box">
-    <span class="kpi-value">53%</span>
-    <span class="kpi-label">既卒成約率（直近6ヶ月平均）</span>
+    <span class="kpi-value">69%</span>
+    <span class="kpi-label">既卒成約率（2026年1月）</span>
   </div>
   <div class="kpi-box">
     <span class="kpi-value">1名</span>
@@ -260,11 +260,11 @@ hr {
 
 <div class="highlight-box">
 <h3>結論を先に</h3>
-<p>20ヶ月分の経営データを分析した結果、以下の5つの重要な事実が判明した：</p>
+<p>19ヶ月分の経営データを分析した結果（2026年2月は月途中のため除外）、以下の5つの重要な事実が判明した：</p>
 <ol>
   <li><strong>Google広告のLTVが¥110万で、オーガニックの3倍</strong> — 最も過小投資のチャネル</li>
   <li><strong>売上成長率は半期+98%（H2 2025）</strong> — SaaS T2D3基準でも「異常な速度」</li>
-  <li><strong>2月は構造的ボトムで、毎年売上が最低月になる</strong> — 季節性リスクの認識不足</li>
+  <li><strong>2月は構造的ボトム月</strong> — 2025年2月の¥96万は年間最低 — 季節性リスクの認識が必要</li>
   <li><strong>X（Twitter）経由の成約は枯渇しつつある</strong> — 月0〜1件に低下、依存を外すべき</li>
   <li><strong>人材紹介併用率の変動がLTVを2倍にも0.5倍にもする</strong> — 最大の経営レバー</li>
 </ol>
@@ -275,7 +275,7 @@ hr {
 <!-- ===== 2. REVENUE ANALYSIS ===== -->
 <h2>2. 売上実績の徹底分析</h2>
 
-<h3>2-1. 月次売上推移（2024年7月〜2026年2月）</h3>
+<h3>2-1. 月次売上推移（2024年7月〜2026年1月）</h3>
 
 <div class="chart-wrapper">
   <div class="chart-title">図表1：月次売上推移 &amp; 3ヶ月移動平均</div>
@@ -294,7 +294,7 @@ hr {
     <tr><td>Q2 2025（4-6月）</td><td class="num">1,122万円</td><td class="num"><strong>+70.5%</strong></td><td class="num">374万円</td></tr>
     <tr><td>Q3 2025（7-9月）</td><td class="num">1,613万円</td><td class="num"><strong>+43.8%</strong></td><td class="num">538万円</td></tr>
     <tr><td>Q4 2025（10-12月）</td><td class="num">1,906万円</td><td class="num">+18.1%</td><td class="num">635万円</td></tr>
-    <tr><td>Q1 2026（1-2月*）</td><td class="num">855万円*</td><td class="num">（2ヶ月分）</td><td class="num">428万円</td></tr>
+    <tr><td>2026年1月</td><td class="num">508万円</td><td class="num">（1ヶ月分）</td><td class="num">508万円</td></tr>
   </tbody>
 </table>
 
@@ -323,9 +323,9 @@ hr {
 <h3>2-3. 売上構成比の分析</h3>
 
 <div class="chart-wrapper">
-  <div class="chart-title">図表2：売上構成比（2024年7月〜2026年2月 累計）</div>
+  <div class="chart-title">図表2：売上構成比（2024年7月〜2026年1月 累計）</div>
   <canvas id="chartRevenueBreakdown"></canvas>
-  <div class="chart-source">出典：経営管理.xlsx。累計20ヶ月。</div>
+  <div class="chart-source">出典：経営管理.xlsx。累計19ヶ月。</div>
 </div>
 
 <table>
@@ -333,17 +333,16 @@ hr {
     <tr><th>セグメント</th><th>累計売上</th><th>構成比</th><th>直近3ヶ月月平均</th><th>トレンド</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>既卒スクール×エージェント</strong></td><td class="num">5,289万円</td><td class="num">70.9%</td><td class="num">384万円</td><td>成長</td></tr>
-    <tr><td>新卒スクール</td><td class="num">1,379万円</td><td class="num">18.5%</td><td class="num">66万円</td><td>停滞</td></tr>
-    <tr><td>コンテンツ販売（note等）</td><td class="num">614万円</td><td class="num">8.2%</td><td class="num">13万円</td><td><strong>急減</strong></td></tr>
-    <tr><td>MyVision業務委託</td><td class="num">143万円</td><td class="num">1.9%</td><td class="num">9万円</td><td>微小</td></tr>
-    <tr><td>その他</td><td class="num">31万円</td><td class="num">0.4%</td><td class="num">0万円</td><td>—</td></tr>
+    <tr><td><strong>既卒スクール×エージェント</strong></td><td class="num">4,971万円</td><td class="num">70.4%</td><td class="num">454万円</td><td>成長</td></tr>
+    <tr><td>新卒スクール</td><td class="num">1,352万円</td><td class="num">19.1%</td><td class="num">85万円</td><td>停滞</td></tr>
+    <tr><td>コンテンツ販売（note等）</td><td class="num">613万円</td><td class="num">8.7%</td><td class="num">16万円</td><td><strong>急減</strong></td></tr>
+    <tr><td>MyVision業務委託</td><td class="num">143万円</td><td class="num">2.0%</td><td class="num">17万円</td><td>微小</td></tr>
   </tbody>
 </table>
 
 <div class="insight-card">
 <h4>Insight #2：コンテンツ販売が急減、新卒は単価問題</h4>
-<p><span class="label-warning">要注意</span> コンテンツ販売（note等）は2024年10月の¥57万がピークで、2026年2月には¥1.3万まで縮小。<strong>収益の95%以上を「教育＋人材紹介」に依存する構造</strong>が確立された。</p>
+<p><span class="label-warning">要注意</span> コンテンツ販売（note等）は2024年10月の¥57万がピークで、直近3ヶ月は月平均¥16万まで縮小。<strong>収益の90%以上を「教育＋人材紹介」に依存する構造</strong>が確立された。</p>
 <p>新卒スクールの客単価は¥9.1万〜¥25万で、既卒スクールの¥23万〜¥64万と比較して<strong>約1/2〜1/4</strong>。月間売上も¥27万〜¥176万と変動が大きく、収益安定性に欠ける。</p>
 </div>
 
@@ -388,12 +387,12 @@ hr {
   <li>人材紹介併用率が高い（つまり実際に転職する確率が高い）</li>
   <li>1件あたりの成功報酬額が大きい（年収レンジが高い層）</li>
 </ul>
-<p>という複合効果による。<strong>CPA ¥5.9万に対してLTV ¥110万 = ROI 18.7倍</strong>。これは、広告費を<strong>月¥100万以上に拡大しても十分にペイする</strong>ことを示唆する。現在の月¥12万（2026年2月）は深刻な過小投資。</p>
+<p>という複合効果による。<strong>CPA ¥5.9万に対してLTV ¥110万 = ROI 18.7倍</strong>。これは、広告費を<strong>月¥100万以上に拡大しても十分にペイする</strong>ことを示唆する。現在の月¥4万（2026年1月）は深刻な過小投資。</p>
 </div>
 
 <div class="insight-card">
 <h4>Insight #4：X（Twitter）チャネルの枯渇</h4>
-<p><span class="label-warning">要注意</span> X経由の成約は、2024年11月に月3件を記録して以降、<strong>2025年6月〜2026年2月の9ヶ月間で合計わずか4件</strong>（月0.4件）に激減。初回メンタリング実施数も月0〜1件に低下。</p>
+<p><span class="label-warning">要注意</span> X経由の成約は、2024年11月に月3件を記録して以降、<strong>2025年6月〜2026年1月の8ヶ月間で合計わずか数件</strong>（月0.5件以下）に激減。初回メンタリング実施数も月0〜1件に低下。</p>
 <p>一方、初期（2024年7月〜2025年2月）にはX経由で月1〜3件の安定した成約があった。これはCEO個人のXアカウントの初期フォロワーベースを刈り取り尽くした可能性が高い。<strong>X依存から脱却し、SEO・YouTube・広告へのリソースシフトが必要</strong>。</p>
 </div>
 
@@ -407,22 +406,22 @@ hr {
 
 <table>
   <thead>
-    <tr><th>指標</th><th>2024年<br>7-12月avg</th><th>2025年<br>1-6月avg</th><th>2025年<br>7-12月avg</th><th>2026年<br>1-2月avg</th><th>トレンド</th></tr>
+    <tr><th>指標</th><th>2024年<br>7-12月avg</th><th>2025年<br>1-6月avg</th><th>2025年<br>7-12月avg</th><th>2026年<br>1月</th><th>トレンド</th></tr>
   </thead>
   <tbody>
-    <tr><td>月間申込数</td><td class="num">10.7</td><td class="num">19.3</td><td class="num">31.2</td><td class="num">22.0</td><td>成長→一時減</td></tr>
-    <tr><td>日程確定率</td><td class="num">—</td><td class="num">87.6%</td><td class="num">80.0%</td><td class="num">85.7%</td><td>安定</td></tr>
-    <tr><td>実施率（/日程確定）</td><td class="num">—</td><td class="num">85.0%</td><td class="num">76.1%</td><td class="num">67.9%</td><td><strong>悪化</strong></td></tr>
-    <tr><td>成約率（/実施）</td><td class="num">51.3%</td><td class="num">38.3%</td><td class="num">49.2%</td><td class="num">59.3%</td><td>回復</td></tr>
-    <tr><td>月間成約数</td><td class="num">5.3</td><td class="num">5.8</td><td class="num">9.8</td><td class="num">8.0</td><td>成長</td></tr>
+    <tr><td>月間申込数</td><td class="num">10.7</td><td class="num">19.3</td><td class="num">31.2</td><td class="num">23</td><td>成長</td></tr>
+    <tr><td>日程確定率</td><td class="num">—</td><td class="num">87.6%</td><td class="num">80.0%</td><td class="num">87.0%</td><td>回復</td></tr>
+    <tr><td>実施率（/日程確定）</td><td class="num">—</td><td class="num">85.0%</td><td class="num">76.1%</td><td class="num">80.0%</td><td>回復傾向</td></tr>
+    <tr><td>成約率（/実施）</td><td class="num">51.3%</td><td class="num">38.3%</td><td class="num">49.2%</td><td class="num"><strong>68.8%</strong></td><td><strong>過去最高</strong></td></tr>
+    <tr><td>月間成約数</td><td class="num">5.3</td><td class="num">5.8</td><td class="num">9.8</td><td class="num"><strong>11</strong></td><td><strong>最高更新</strong></td></tr>
   </tbody>
 </table>
 
 <div class="insight-card">
-<h4>Insight #5：実施率の低下が最大のボトルネック</h4>
-<p><span class="label-warning">要注意</span> 日程確定→実施の歩留まり（ドタキャン率）が悪化傾向。2024年7月〜2025年3月は<strong>90-100%</strong>だった実施率が、2025年11月には<strong>71.4%</strong>、2026年2月には<strong>61.1%</strong>まで低下。</p>
-<p>これは、申込数の増加（広告経由の「軽い」リードの増加）と、メンタリング実施キャパシティの不足の両方が原因と推測される。<strong>仮に実施率を90%に戻すだけで、月間成約数は+30%改善</strong>する可能性がある。</p>
-<p>一方、成約率（実施→成約）は直近で59.3%と高水準に回復。つまり「実施さえすれば成約する」状態であり、<strong>問題は「実施に至らせること」にある</strong>。</p>
+<h4>Insight #5：実施率はH2 2025で悪化したが、1月に回復傾向</h4>
+<p><span class="label-warning">要注意</span> 日程確定→実施の歩留まり（ドタキャン率）はH2 2025で悪化したが、2026年1月には回復傾向。2024年7月〜2025年3月は<strong>90-100%</strong>だった実施率が、2025年下半期は平均<strong>76.1%</strong>に低下。ただし2026年1月は<strong>約80%</strong>に回復。</p>
+<p>H2 2025の悪化は、申込数の増加（広告経由の「軽い」リードの増加）と、メンタリング実施キャパシティの不足の両方が原因と推測される。<strong>実施率を90%に戻すだけで、月間成約数は+20-30%改善</strong>する可能性がある。</p>
+<p>特筆すべきは、成約率（実施→成約）が2026年1月に<strong>68.8%と過去最高水準</strong>を記録した点。つまり「実施さえすれば成約する」状態は強固であり、<strong>実施率の改善がそのまま売上直結</strong>する。</p>
 </div>
 
 <hr>
@@ -465,7 +464,6 @@ hr {
     <tr><td>2025/11</td><td class="num">10</td><td class="num">50.0%</td><td class="num">506万円</td><td class="num">¥506,000</td></tr>
     <tr><td>2025/12</td><td class="num">9</td><td class="num">33.3%</td><td class="num">475万円</td><td class="num">¥528,000</td></tr>
     <tr><td>2026/01</td><td class="num">11</td><td class="num">27.3%</td><td class="num">381万円</td><td class="num">¥346,000</td></tr>
-    <tr><td>2026/02</td><td class="num">5</td><td class="num">40.0%</td><td class="num">318万円</td><td class="num">¥636,000</td></tr>
   </tbody>
 </table>
 
@@ -501,14 +499,13 @@ hr {
     <tr><td>2025/11</td><td class="num">¥200,225</td><td class="num">¥245,708</td><td class="num">¥445,933</td><td class="num">¥89,187</td><td class="num">2</td></tr>
     <tr><td>2025/12</td><td class="num">¥0</td><td class="num">¥16,270</td><td class="num">¥16,270</td><td class="num">¥4,068</td><td class="num">2</td></tr>
     <tr><td>2026/01</td><td class="num">¥43,134</td><td class="num">¥196,430</td><td class="num">¥239,564</td><td class="num">¥59,891</td><td class="num">0</td></tr>
-    <tr><td>2026/02</td><td class="num">¥117,652</td><td class="num">¥180,624</td><td class="num">¥298,276</td><td class="num">¥49,713</td><td class="num">2</td></tr>
   </tbody>
 </table>
 
 <div class="insight-card">
 <h4>Insight #6：広告費はROIベースで5-10倍に拡大可能</h4>
-<p><span class="label-action">アクション推奨</span> 9ヶ月間の広告費合計は<strong>¥476万</strong>。同期間の広告経由成約は<strong>約15件</strong>、推定LTV合計は<strong>約1,050万〜1,650万円</strong>（Google広告LTV ¥110万 × 7件 + FB ¥42万 × 10件 = 約1,190万円）。</p>
-<p><strong>投入¥476万に対してリターン¥1,190万 = ROAS 250%</strong>。通常、ROAS 200%以上であれば広告費拡大が推奨される。特にGoogle広告は：</p>
+<p><span class="label-action">アクション推奨</span> 8ヶ月間の広告費合計は<strong>¥446万</strong>。同期間の広告経由成約は<strong>約13件</strong>、推定LTV合計は<strong>約1,000万〜1,500万円</strong>（Google広告LTV ¥110万 × 5件 + FB ¥42万 × 8件 = 約886万円）。</p>
+<p><strong>投入¥446万に対してリターン¥886万以上 = ROAS 200%+</strong>。通常、ROAS 200%以上であれば広告費拡大が推奨される。特にGoogle広告は：</p>
 <ul>
   <li>CPA ¥5.9万 × LTV ¥110万 = <strong>ROAS 1,869%</strong></li>
   <li>月¥100万に拡大しても、CPA 2倍の¥12万でもROAS 900%以上</li>
@@ -539,12 +536,11 @@ hr {
     <tr><td>11月</td><td class="num">288万円</td><td class="num">626万円</td><td class="num">+117%</td><td>—</td></tr>
     <tr><td>12月</td><td class="num">197万円</td><td class="num">581万円</td><td class="num">+195%</td><td>年末鈍化</td></tr>
     <tr><td>1月</td><td class="num">293万円*</td><td class="num">508万円</td><td class="num">+73%</td><td>—</td></tr>
-    <tr style="background:#fff5f5"><td>2月</td><td class="num"><strong>96万円</strong>*</td><td class="num"><strong>347万円</strong></td><td class="num">+261%</td><td><strong>構造的ボトム</strong></td></tr>
   </tbody>
 </table>
-<div class="table-caption">*2024年度の1-2月は2025年1-2月のデータ。</div>
+<div class="table-caption">*2024年度の1月は2025年1月のデータ。2026年2月は月途中のため除外。</div>
 
-<p><span class="label-fact">ファクト</span> <strong>2月は両年度とも売上が最低月</strong>。2025年2月は¥96万（年間最低）、2026年2月は¥347万（同期間の中で最低）。これは「2月は短い」「年末年始で転職活動が停滞」「新年度に向けた検討期間」等の構造要因による。YoY全月で<strong>+73%〜+328%</strong>の成長を達成しており、成長トレンド自体は健全。</p>
+<p><span class="label-fact">ファクト</span> <strong>8月は両年度とも相対的に低調</strong>（2024年8月¥115万、2025年8月¥397万）。お盆休暇による一時的な転職活動停滞が要因と推測される。なお、2025年2月は¥96万で年間最低月であり、<strong>2月は構造的ボトム月</strong>として季節性リスクを認識すべきである。YoY全月で<strong>+73%〜+328%</strong>の成長を達成しており、成長トレンド自体は健全。</p>
 
 <hr>
 
@@ -558,10 +554,10 @@ hr {
     <tr><th>指標</th><th>既卒スクール</th><th>新卒スクール</th><th>差異</th></tr>
   </thead>
   <tbody>
-    <tr><td>累計成約数（20ヶ月）</td><td class="num">143</td><td class="num">93</td><td>既卒 1.5x</td></tr>
+    <tr><td>累計成約数（19ヶ月）</td><td class="num">137</td><td class="num">85</td><td>既卒 1.6x</td></tr>
     <tr><td>成約率</td><td class="num">53.1%</td><td class="num">24.6%</td><td><strong>既卒 2.2x</strong></td></tr>
     <tr><td>客単価（直近）</td><td class="num">¥355,000</td><td class="num">¥91,000</td><td><strong>既卒 3.9x</strong></td></tr>
-    <tr><td>月間売上（直近3ヶ月avg）</td><td class="num">384万円</td><td class="num">66万円</td><td>既卒 5.8x</td></tr>
+    <tr><td>月間売上（直近3ヶ月avg）</td><td class="num">454万円</td><td class="num">85万円</td><td>既卒 5.3x</td></tr>
     <tr><td>主要チャネル</td><td>SEO, Google広告</td><td>X, FB広告</td><td>異なるチャネル</td></tr>
   </tbody>
 </table>
@@ -650,25 +646,25 @@ hr {
     <tr><th>項目</th><th>現在</th><th>推奨</th><th>期待効果</th></tr>
   </thead>
   <tbody>
-    <tr><td>月間Google広告費</td><td class="num">¥12万</td><td class="num"><strong>¥100〜200万</strong></td><td>月間成約+3〜5件</td></tr>
-    <tr><td>月間FB広告費（既卒）</td><td class="num">¥18万</td><td class="num">¥50〜80万</td><td>月間成約+2〜3件</td></tr>
+    <tr><td>月間Google広告費</td><td class="num">¥4万</td><td class="num"><strong>¥100〜200万</strong></td><td>月間成約+3〜5件</td></tr>
+    <tr><td>月間FB広告費（既卒）</td><td class="num">¥20万</td><td class="num">¥50〜80万</td><td>月間成約+2〜3件</td></tr>
     <tr><td>新卒FB広告</td><td class="num">変動</td><td class="num"><strong>中止/大幅縮小</strong></td><td>無駄な広告費削減</td></tr>
   </tbody>
 </table>
-<p>理由：Google広告LTV ¥110万 / CPA ¥5.9万 = <strong>ROI 18.7x</strong>。これは他チャネルの3倍の効率。CPA倍増しても9.4xのROI。</p>
+<p>理由：Google広告LTV ¥110万 / CPA ¥5.9万 = <strong>ROI 18.7x</strong>。これは他チャネルの3倍の効率。CPA倍増しても9.4xのROI。2026年1月はGoogle広告費がわずか¥4.3万まで低下しており、即座に拡大すべき。</p>
 
 <h3>優先度2（今月中）：実施率の改善</h3>
 <ul>
   <li><strong>リマインド体制の強化</strong>：日程確定→実施のドタキャン防止（前日・当日のLINE/SMS自動リマインド）</li>
   <li><strong>広告経由リードの品質フィルタ</strong>：日程確定前にヒアリングフォームで本気度を確認</li>
-  <li><strong>目標</strong>：実施率を現在の68%→85%に回復 → 月間成約+2.5件</li>
+  <li><strong>目標</strong>：実施率を現在の80%→90%に回復 → 月間成約+1〜2件</li>
 </ul>
 
 <h3>優先度3（今四半期）：人材紹介併用率の安定化</h3>
 <ul>
   <li>併用率50%+を月次KPIに設定</li>
   <li>初回メンタリングでエージェント利用の標準的な案内フロー構築</li>
-  <li><strong>効果</strong>：併用率40%→60%でLTV +¥10万/件 → 月次+約¥100万の増収</li>
+  <li><strong>効果</strong>：併用率27%（1月実績）→60%でLTV +¥10万/件 → 月次+約¥100万の増収</li>
 </ul>
 
 <h3>優先度4（中期）：YouTube・Blog SEOの拡大</h3>
@@ -690,16 +686,16 @@ hr {
     <tr><th>シナリオ</th><th>月間成約</th><th>月間売上</th><th>年間売上</th><th>前提</th></tr>
   </thead>
   <tbody>
-    <tr><td>現状維持</td><td class="num">8件</td><td class="num">~400万円</td><td class="num">~4,800万円</td><td>広告費据置、現状CRのまま</td></tr>
-    <tr><td>Google広告拡大のみ</td><td class="num">12件</td><td class="num">~600万円</td><td class="num">~7,200万円</td><td>Google広告月¥200万、LTV ¥60万avg</td></tr>
-    <tr style="background:#e6ffed"><td><strong>全施策実行</strong></td><td class="num"><strong>16件</strong></td><td class="num"><strong>~800万円</strong></td><td class="num"><strong>~9,600万円</strong></td><td>広告拡大+実施率改善+併用率UP</td></tr>
-    <tr><td>アグレッシブ</td><td class="num">20件</td><td class="num">~1,100万円</td><td class="num"><strong>~1.3億円</strong></td><td>月間成約20件+併用率60%</td></tr>
+    <tr><td>現状維持</td><td class="num">10件</td><td class="num">~500万円</td><td class="num">~6,000万円</td><td>広告費据置、現状CRのまま</td></tr>
+    <tr><td>Google広告拡大のみ</td><td class="num">14件</td><td class="num">~700万円</td><td class="num">~8,400万円</td><td>Google広告月¥200万、LTV ¥60万avg</td></tr>
+    <tr style="background:#e6ffed"><td><strong>全施策実行</strong></td><td class="num"><strong>18件</strong></td><td class="num"><strong>~900万円</strong></td><td class="num"><strong>~1.1億円</strong></td><td>広告拡大+実施率改善+併用率UP</td></tr>
+    <tr><td>アグレッシブ</td><td class="num">22件</td><td class="num">~1,200万円</td><td class="num"><strong>~1.4億円</strong></td><td>月間成約22件+併用率60%</td></tr>
   </tbody>
 </table>
 
 <blockquote>
 <strong>最も重要なメッセージ</strong><br><br>
-トップティアは、<strong>広告投資を月¥30万→¥200万に引き上げ、実施率を68%→85%に改善し、併用率を40%→60%に安定させる</strong>だけで、年間売上を現在の5,300万円から<strong>約1億円</strong>に倍増させられるポテンシャルがある。<br><br>
+トップティアは、<strong>広告投資を月¥24万→¥200万に引き上げ、実施率を80%→90%に改善し、併用率を40%→60%に安定させる</strong>だけで、年間売上を現在の月500万円ペース（年間6,000万円）から<strong>年間1億円超</strong>に成長させるポテンシャルがある。<br><br>
 これは新規チャネルの開拓や事業モデルの変更を一切必要とせず、<strong>既存の仕組みの「パラメータ調整」だけで実現可能</strong>な成長である。
 </blockquote>
 
@@ -707,7 +703,7 @@ hr {
 
 <!-- ===== FOOTER ===== -->
 <div class="report-footer">
-  <p>本レポートは、株式会社トップティアの内部経営データ「経営管理(旧_売上管理).xlsx」のPL(実績計画)シートに基づく分析である。すべての<span class="label-fact">ファクト</span>は同ファイルの実績データに基づく。<span class="label-insight">重要発見</span>および<span class="label-action">アクション推奨</span>は、データに基づく合理的推論であり、実際の結果は市場環境等により異なる可能性がある。</p>
+  <p>本レポートは、株式会社トップティアの内部経営データ「経営管理(旧_売上管理).xlsx」のPL(実績計画)シートに基づく分析である。2026年2月は月途中のデータのため分析対象から除外している。すべての<span class="label-fact">ファクト</span>は同ファイルの実績データに基づく。<span class="label-insight">重要発見</span>および<span class="label-action">アクション推奨</span>は、データに基づく合理的推論であり、実際の結果は市場環境等により異なる可能性がある。</p>
   <p>成長率の比較データは、各社IR資料・IRBank・TechCrunch・SaaStr等の公開情報に基づく。</p>
   <p>分析日：2026年2月20日 ｜ CONFIDENTIAL</p>
 </div>
@@ -726,8 +722,8 @@ const cGold = 'rgba(200,160,60,0.85)';
 // ========================================
 // Chart 1: Monthly Revenue
 // ========================================
-const monthLabels = ['7月','8月','9月','10月','11月','12月','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月','1月','2月'];
-const revenueData = [244,115,245,163,288,197,293,96,269,500,233,389,463,397,753,698,626,581,508,347];
+const monthLabels = ['7月','8月','9月','10月','11月','12月','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月','1月'];
+const revenueData = [244,115,245,163,288,197,293,96,269,500,233,389,463,397,753,698,626,581,508];
 // 3-month moving average
 const ma3 = revenueData.map((v,i) => {
   if (i < 2) return null;
@@ -780,9 +776,9 @@ new Chart(document.getElementById('chartMonthlyRevenue'), {
 new Chart(document.getElementById('chartRevenueBreakdown'), {
   type: 'doughnut',
   data: {
-    labels: ['既卒スクール×エージェント 70.9%', '新卒スクール 18.5%', 'コンテンツ販売 8.2%', 'MyVision/他 2.3%'],
+    labels: ['既卒スクール×エージェント 70.4%', '新卒スクール 19.1%', 'コンテンツ販売 8.7%', 'MyVision/他 2.0%'],
     datasets: [{
-      data: [5289, 1379, 614, 174],
+      data: [4971, 1352, 613, 143],
       backgroundColor: [cPrimary, cAccent1, cAccent3, cGold],
       borderWidth: 2,
       borderColor: '#fff'
@@ -856,11 +852,11 @@ new Chart(document.getElementById('chartChannelLTV'), {
 new Chart(document.getElementById('chartFunnel'), {
   type: 'line',
   data: {
-    labels: ['2024/7','8','9','10','11','12','2025/1','2','3','4','5','6','7','8','9','10','11','12','2026/1','2'],
+    labels: ['2024/7','8','9','10','11','12','2025/1','2','3','4','5','6','7','8','9','10','11','12','2026/1'],
     datasets: [
       {
         label: '申込数',
-        data: [9,5,13,6,16,15,12,12,12,27,17,36,40,24,29,35,38,21,23,21],
+        data: [9,5,13,6,16,15,12,12,12,27,17,36,40,24,29,35,38,21,23],
         borderColor: cLight.replace('0.15','0.6'),
         backgroundColor: 'transparent',
         borderWidth: 1.5,
@@ -869,7 +865,7 @@ new Chart(document.getElementById('chartFunnel'), {
       },
       {
         label: '実施数',
-        data: [9,4,13,6,13,14,12,12,9,23,11,21,27,19,22,24,20,16,16,11],
+        data: [9,4,13,6,13,14,12,12,9,23,11,21,27,19,22,24,20,16,16],
         borderColor: cAccent3,
         backgroundColor: 'transparent',
         borderWidth: 2,
@@ -878,7 +874,7 @@ new Chart(document.getElementById('chartFunnel'), {
       },
       {
         label: '成約数',
-        data: [5,2,5,4,11,5,6,3,5,10,3,8,9,10,9,12,10,9,11,5],
+        data: [5,2,5,4,11,5,6,3,5,10,3,8,9,10,9,12,10,9,11],
         borderColor: cAccent2,
         backgroundColor: cAccent2.replace('0.9','0.1'),
         borderWidth: 2.5,
@@ -908,11 +904,11 @@ new Chart(document.getElementById('chartFunnel'), {
 new Chart(document.getElementById('chartLTV'), {
   type: 'line',
   data: {
-    labels: ['7月','8月','9月','10月','11月','12月','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月','1月','2月'],
+    labels: ['7月','8月','9月','10月','11月','12月','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月','1月'],
     datasets: [
       {
         label: 'LTV（スクール確定分のみ）',
-        data: [34.1,30.5,36.3,22.6,20.8,27.7,29.8,22.8,25.7,27.4,31.5,23.8,28.2,23.8,15.8,22.9,23.8,32.7,30.6,35.5],
+        data: [34.1,30.5,36.3,22.6,20.8,27.7,29.8,22.8,25.7,27.4,31.5,23.8,28.2,23.8,15.8,22.9,23.8,32.7,30.6],
         borderColor: cLight.replace('0.15','0.5'),
         backgroundColor: 'transparent',
         borderWidth: 1.5,
@@ -921,7 +917,7 @@ new Chart(document.getElementById('chartLTV'), {
       },
       {
         label: 'LTV（スクール+人材紹介込み）',
-        data: [34.1,30.5,36.8,22.6,20.8,27.7,29.8,22.8,27.2,28.1,24.0,25.6,31.9,29.8,68.1,49.8,50.6,52.8,34.6,63.6],
+        data: [34.1,30.5,36.8,22.6,20.8,27.7,29.8,22.8,27.2,28.1,24.0,25.6,31.9,29.8,68.1,49.8,50.6,52.8,34.6],
         borderColor: cAccent2,
         backgroundColor: cAccent2.replace('0.9','0.1'),
         borderWidth: 2.5,
@@ -952,18 +948,18 @@ new Chart(document.getElementById('chartLTV'), {
 new Chart(document.getElementById('chartAdSpend'), {
   type: 'bar',
   data: {
-    labels: ['2025/06','07','08','09','10','11','12','2026/01','02'],
+    labels: ['2025/06','07','08','09','10','11','12','2026/01'],
     datasets: [
       {
         label: 'Google広告（万円）',
-        data: [50.4, 39.7, 52.0, 32.3, 31.3, 20.0, 0, 4.3, 11.8],
+        data: [50.4, 39.7, 52.0, 32.3, 31.3, 20.0, 0, 4.3],
         backgroundColor: cPrimary,
         barPercentage: 0.35,
         yAxisID: 'y'
       },
       {
         label: 'FB広告（万円）',
-        data: [30.2, 69.2, 18.3, 24.7, 28.2, 24.6, 1.6, 19.6, 18.1],
+        data: [30.2, 69.2, 18.3, 24.7, 28.2, 24.6, 1.6, 19.6],
         backgroundColor: cAccent3,
         barPercentage: 0.35,
         yAxisID: 'y'
@@ -971,7 +967,7 @@ new Chart(document.getElementById('chartAdSpend'), {
       {
         type: 'line',
         label: 'CPA 日程確定（万円）',
-        data: [8.1, 7.3, 17.6, 8.1, 9.9, 8.9, 0.4, 6.0, 5.0],
+        data: [8.1, 7.3, 17.6, 8.1, 9.9, 8.9, 0.4, 6.0],
         borderColor: cAccent2,
         backgroundColor: cAccent2,
         borderWidth: 2.5,
@@ -1004,17 +1000,17 @@ new Chart(document.getElementById('chartAdSpend'), {
 new Chart(document.getElementById('chartSeasonality'), {
   type: 'bar',
   data: {
-    labels: ['7月','8月','9月','10月','11月','12月','1月','2月'],
+    labels: ['7月','8月','9月','10月','11月','12月','1月'],
     datasets: [
       {
         label: '2024年度',
-        data: [244, 115, 245, 163, 288, 197, 293, 96],
+        data: [244, 115, 245, 163, 288, 197, 293],
         backgroundColor: cLight.replace('0.15','0.35'),
         barPercentage: 0.35
       },
       {
         label: '2025年度',
-        data: [463, 397, 753, 698, 626, 581, 508, 347],
+        data: [463, 397, 753, 698, 626, 581, 508],
         backgroundColor: cPrimary,
         barPercentage: 0.35
       }
