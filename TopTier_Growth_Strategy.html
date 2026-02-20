@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社トップティア 成長戦略レポート 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  background: #fafafa;
+  color: #1a1a1a;
+  line-height: 2.0;
+  font-size: 15px;
+  margin: 0;
+}
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 32px 80px;
+  background: #fff;
+  min-height: 100vh;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0D2137;
+  letter-spacing: 0.06em;
+  border-bottom: 3px solid #0D2137;
+  padding-bottom: 12px;
+  margin-bottom: 0.3em;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0D2137;
+  border-left: 5px solid #0D2137;
+  padding-left: 14px;
+  margin-top: 3.5em;
+  margin-bottom: 1em;
+  letter-spacing: 0.04em;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a3a5c;
+  margin-top: 2.2em;
+  margin-bottom: 0.7em;
+}
+h4 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #2c5282;
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+.subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 3em;
+  line-height: 1.8;
+}
+p { margin-bottom: 0.9em; }
+strong { color: #0D2137; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0 1.4em;
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+th {
+  background: #0D2137;
+  color: #fff;
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+}
+td {
+  padding: 7px 12px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:nth-child(even) td { background: #f7f9fb; }
+.table-caption {
+  font-size: 11.5px;
+  color: #888;
+  margin-top: 0.3em;
+  margin-bottom: 2em;
+}
+blockquote {
+  border-left: 4px solid #0D2137;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  background: #f0f4f8;
+  font-size: 14.5px;
+  color: #2d3748;
+  line-height: 1.9;
+}
+.chart-wrapper {
+  margin: 2em 0;
+  padding: 20px 16px;
+  background: #fafcfe;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+.chart-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0D2137;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.chart-source {
+  font-size: 11px;
+  color: #888;
+  margin-top: 0.5em;
+  text-align: right;
+}
+canvas { max-height: 340px; }
+.label-fact {
+  display: inline-block;
+  background: #0D2137;
+  color: #fff;
+  font-size: 10.5px;
+  padding: 1px 8px;
+  border-radius: 3px;
+  margin-right: 3px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.label-estimate {
+  display: inline-block;
+  background: #4a7c59;
+  color: #fff;
+  font-size: 10.5px;
+  padding: 1px 8px;
+  border-radius: 3px;
+  margin-right: 3px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.label-target {
+  display: inline-block;
+  background: #c53030;
+  color: #fff;
+  font-size: 10.5px;
+  padding: 1px 8px;
+  border-radius: 3px;
+  margin-right: 3px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.source-inline {
+  font-size: 11px;
+  color: #888;
+}
+.phase-box {
+  border: 1px solid #c0d4e8;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 1.2em 0;
+  background: #f7fafd;
+}
+.phase-box h4 {
+  color: #0D2137;
+  margin-top: 0;
+  font-size: 15px;
+}
+ul { margin: 0.8em 0 1.2em 1.5em; }
+li { margin-bottom: 0.4em; }
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 3em 0;
+}
+.team-card {
+  border: 1px solid #d0dbe8;
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 1em 0;
+  background: #fafcfe;
+}
+.team-card h4 {
+  margin-top: 0;
+  color: #0D2137;
+  font-size: 15px;
+  border-bottom: 1px solid #d0dbe8;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+.team-card .role {
+  font-size: 12px;
+  color: #0D2137;
+  background: #e2ecf7;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.team-card .ai-badge {
+  font-size: 11px;
+  color: #fff;
+  background: #6b46c1;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 3px;
+  margin-left: 6px;
+  font-weight: 600;
+}
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 1.5em 0;
+}
+.kpi-box {
+  text-align: center;
+  padding: 18px 10px;
+  background: #f0f4f8;
+  border-radius: 6px;
+  border: 1px solid #d0dbe8;
+}
+.kpi-box .kpi-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0D2137;
+  line-height: 1.2;
+}
+.kpi-box .kpi-label {
+  font-size: 11.5px;
+  color: #666;
+  margin-top: 4px;
+}
+.highlight-box {
+  background: #0D2137;
+  color: #fff;
+  padding: 24px 28px;
+  border-radius: 8px;
+  margin: 2em 0;
+}
+.highlight-box h3 {
+  color: #fff;
+  margin-top: 0;
+  font-size: 18px;
+}
+.highlight-box p { color: #e0e8f0; }
+.highlight-box strong { color: #fff; }
+.report-footer {
+  margin-top: 4em;
+  padding-top: 1.5em;
+  border-top: 2px solid #0D2137;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .container { padding: 20px 16px 60px; }
+  h1 { font-size: 22px; }
+  h2 { font-size: 17px; }
+  .kpi-grid { grid-template-columns: 1fr; }
+  table { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>株式会社トップティア<br>成長戦略レポート 2026</h1>
+<p class="subtitle">
+Strategists事業を軸とした時価総額100億円到達プラン<br>
+AI-First &times; 超少数精鋭モデルによる人材紹介業の再定義<br>
+作成日：2026年2月20日 ｜ CONFIDENTIAL
+</p>
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<h2>1. エグゼクティブサマリー</h2>
+
+<div class="highlight-box">
+<h3>核心命題</h3>
+<p>人材紹介業は「人海戦術 &times; 大量マーケ投資」の時代から、<strong>「AI &times; 超少数精鋭 &times; 複合ビジネスモデル」</strong>の時代へ構造転換しつつある。株式会社トップティア（Strategists事業）は、正社員1名 &times; 営業利益率50% &times; AI開発体制という世界的に見ても極めて先進的なモデルで、この転換を先導する位置にある。</p>
+<p>本レポートは、<strong>短期間で時価総額100億円以上</strong>を達成するための具体的な成長戦略を、競合分析・バリュエーション逆算・チーム設計・財務計画の観点から策定する。</p>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi-box">
+    <div class="kpi-value">100億円+</div>
+    <div class="kpi-label">目標時価総額</div>
+  </div>
+  <div class="kpi-box">
+    <div class="kpi-value">~50%</div>
+    <div class="kpi-label">現在の営業利益率</div>
+  </div>
+  <div class="kpi-box">
+    <div class="kpi-value">1名</div>
+    <div class="kpi-label">現在の正社員数</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ===== 2. CEO PROFILE ===== -->
+<h2>2. CEO プロフィール &amp; 創業者の優位性</h2>
+
+<h3>山本 雄大（Yamamoto Yudai）</h3>
+<table>
+  <tbody>
+    <tr><td>年齢</td><td>26歳（2026年時点）</td></tr>
+    <tr><td>現職</td><td>株式会社トップティア 代表取締役CEO</td></tr>
+    <tr><td>前職</td><td>株式会社スピークバディ（AI英語学習アプリ、累計調達18.5億円、評価額43億円）</td></tr>
+    <tr><td>スピークバディでの経験</td><td>事業企画・VC資金調達業務・新規事業開発・チームマネジメント</td></tr>
+    <tr><td>コア能力</td><td><strong>プロダクトマネージャー型CEO</strong>：要件定義→デザイン→Claude Codeでコーディングまで一気通貫</td></tr>
+    <tr><td>技術スタック</td><td>Claude Code（Anthropic）を活用した自社システム全構築。InVision同等+αのシステムを人件費ゼロで開発中</td></tr>
+    <tr><td>起業実績</td><td>Strategists事業を0→1で立ち上げ。売上11.5万円（2021年）→5,300万円（2025年）の460倍成長を達成</td></tr>
+  </tbody>
+</table>
+
+<p><span class="label-fact">ファクト</span> スピークバディは累計調達18.5億円、評価額43.2億円のAIスタートアップであり<span class="source-inline">（出典：THE BRIDGE、Tracxn）</span>、Global Brain・三菱UFJキャピタル等の機関投資家から調達を受けている。この環境でVC資金調達・事業企画・インターン管理を経験した山本氏は、スタートアップの成長プロセスを内側から理解している。</p>
+
+<h4>CEOとしての構造的優位性</h4>
+<ul>
+  <li><strong>PM &times; AI開発者</strong>：プロダクトマネジメントとAI活用開発を1人で兼務できる。エンジニア採用が不要</li>
+  <li><strong>26歳</strong>：Mercor創業者（22歳で$10B企業を構築）と同世代。VCが注目する「AI世代」の経営者</li>
+  <li><strong>0→1の実績</strong>：5,300万円の売上と50%の利益率は、モデルの実証として機能</li>
+  <li><strong>VC資金調達経験</strong>：スピークバディでの調達補佐経験が、自社の資金調達に直結</li>
+</ul>
+
+<hr>
+
+<!-- ===== 3. MARKET ANALYSIS ===== -->
+<h2>3. 市場分析：コンサル転職 &times; AI人材の交差点</h2>
+
+<h3>3-1. コンサル転職市場の規模と成長性</h3>
+
+<table>
+  <thead>
+    <tr><th>指標</th><th>数値</th><th>出典</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>日本コンサルティング市場規模（2024年）</td><td class="num">2.34兆円</td><td>コンサルフリーマガジン</td></tr>
+    <tr><td>前年比成長率</td><td class="num">+17.0%</td><td>同上</td></tr>
+    <tr><td>長期CAGR（2017→2024年）</td><td class="num">+13.0%</td><td>同上</td></tr>
+    <tr><td>IDC Japan予測CAGR（2021→2026年）</td><td class="num">+8.8%</td><td>IDC Japan</td></tr>
+    <tr><td>グローバルコンサル市場（2024年）</td><td class="num">$354B（約53兆円）</td><td>Mordor Intelligence</td></tr>
+  </tbody>
+</table>
+
+<p><span class="label-fact">ファクト</span> コンサル転職市場は、DX需要の爆発的増加を背景に年率+13〜17%で成長している。PwCコンサルティング国内社員数は2018年の2,350名→2024年の5,130名と2倍以上に拡大<span class="source-inline">（出典：consul.global）</span>。ただし、グローバルではBIG4の平均人員増加率が+1.5%→+0.3%に鈍化しており、この波が1〜1.5年後に日本にも到達する可能性がある。</p>
+
+<h3>3-2. AI人材マッチング市場の爆発的成長</h3>
+
+<p><span class="label-fact">ファクト</span> AI人材マッチングの最大の成功例は<strong>Mercor</strong>である。21歳の創業者3名が2023年に設立し、2025年10月にはSeries C（$350M調達）で<strong>時価総額$10B（約1.5兆円）</strong>に到達した<span class="source-inline">（出典：TechCrunch、CNBC）</span>。</p>
+
+<table>
+  <thead>
+    <tr><th>Mercorの成長軌跡</th><th>時期</th><th>バリュエーション</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Seed</td><td>2023年</td><td class="num">$3.6M調達</td></tr>
+    <tr><td>Series A</td><td>2024年6月</td><td class="num">$250M（$34.7M調達）</td></tr>
+    <tr><td>Series B</td><td>2025年1月</td><td class="num">$2B（$100M調達）</td></tr>
+    <tr><td>Series C</td><td>2025年10月</td><td class="num"><strong>$10B</strong>（$350M調達）</td></tr>
+  </tbody>
+</table>
+<div class="table-caption">出典：TechCrunch、CNBC。Mercorは75名の社内チームで$500M+ ARRを達成。</div>
+
+<p>Mercorの成功は「AI &times; 少人数 &times; 人材マッチング」モデルが、既存の人材紹介ビジネスの何十倍ものバリュエーションを獲得しうることを実証した。トップティアが目指す100億円は、この文脈では極めて保守的な目標である。</p>
+
+<h3>3-3. Claude Codeが変えるゲームのルール</h3>
+
+<p><span class="label-fact">ファクト</span> Claude Codeは2025年5月の一般公開からわずか6ヶ月で<strong>ARR $1B（約1,500億円）</strong>に到達。2026年2月時点では<strong>$2.5B</strong>を超えた<span class="source-inline">（出典：Anthropic公式、SaaStr）</span>。GitHubの全パブリックコミットの4%がClaude Code製であり、2026年末には20%+に達する見込みである。</p>
+
+<blockquote>
+<strong>従来の開発コスト</strong>：シニアエンジニア1名=$150K〜$200K/年。小規模開発チーム=$500K〜$1M/年。<br>
+<strong>Claude Code活用</strong>：月額$100〜$200のサブスクリプション。AI活用でコードの70〜90%を自動生成。<br>
+<strong>結論</strong>：従来の1/100以下のコストで同等のシステムを構築可能。エンジニア組織の不在は「弱み」ではなく「AI時代の構造的優位」である。
+</blockquote>
+
+<hr>
+
+<!-- ===== 4. COMPETITIVE LANDSCAPE ===== -->
+<h2>4. 競合ポジショニング &amp; ベンチマーク企業分析</h2>
+
+<h3>4-1. 日本の人材紹介上場企業マップ</h3>
+
+<div class="chart-wrapper">
+  <div class="chart-title">図表1：競合企業 売上高 vs 時価総額マッピング</div>
+  <canvas id="chartCompetitors"></canvas>
+  <div class="chart-source">各社IR資料・IRBank・みんかぶ。2025-2026年データ。</div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>設立</th><th>売上高</th><th>営業利益率</th><th>従業員数</th><th>時価総額</th><th>PSR</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>ムービン（421A）</td><td>1996年</td><td class="num">38.0億円</td><td class="num">46.4%</td><td class="num">109名</td><td class="num">~160億円</td><td class="num">4.2x</td></tr>
+    <tr><td>ビジョナル/BizReach（4194）</td><td>2007年</td><td class="num">~700億円</td><td class="num">~25%</td><td class="num">~2,100名</td><td class="num">~3,900億円</td><td class="num">5.6x</td></tr>
+    <tr><td>アクシス（9344）</td><td>2002年</td><td class="num">52.7億円</td><td class="num">4.0%</td><td class="num">138名</td><td class="num">~80億円</td><td class="num">1.5x</td></tr>
+    <tr><td>タイミー（215A）</td><td>2017年</td><td class="num">~300億円</td><td class="num">~10%</td><td class="num">~1,300名</td><td class="num">~1,760億円</td><td class="num">5.9x</td></tr>
+    <tr><td>じげん（3679）</td><td>2006年</td><td class="num">~18億円*</td><td class="num">~47%</td><td class="num">~60名*</td><td class="num">~900億円*</td><td class="num">50x*</td></tr>
+    <tr><td>MyVision</td><td>2022年</td><td class="num">20〜40億円</td><td class="num">ほぼ0%</td><td class="num">303名</td><td class="num">52.8億円</td><td class="num">1.3〜2.6x</td></tr>
+    <tr><td><strong>トップティア</strong></td><td><strong>2021年</strong></td><td class="num"><strong>~0.53億円</strong></td><td class="num"><strong>~50%</strong></td><td class="num"><strong>1名</strong></td><td class="num"><strong>―</strong></td><td class="num"><strong>―</strong></td></tr>
+  </tbody>
+</table>
+<div class="table-caption">*じげんはIPO時データ（2013年）。現在は売上84億円・時価総額~700億円。ムービン時価総額はIPO時想定。各社出典：IRBank、みんかぶ、各社IR資料。</div>
+
+<h3>4-2. 時価総額100億円到達のベンチマーク</h3>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>100億円到達時の売上高</th><th>利益率</th><th>PSR/PER</th><th>到達時期</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>ムービン</td><td class="num">~38億円</td><td class="num">46%</td><td>PSR 4.2x</td><td>IPO初日</td></tr>
+    <tr><td>エス・エム・エス</td><td class="num">~27億円</td><td class="num">高成長期</td><td>PSR ~1.4x</td><td>IPO初日</td></tr>
+    <tr><td>じげん</td><td class="num">~18億円</td><td class="num">~47%</td><td>PSR 17x</td><td>IPO初日</td></tr>
+    <tr><td>ダイブ</td><td class="num">~124億円</td><td class="num">低マージン</td><td>PSR 0.7x</td><td>IPO初日</td></tr>
+    <tr><td>Mercor</td><td class="num">数百万ドル</td><td class="num">黒字</td><td>PSR 100x+</td><td>Series A</td></tr>
+  </tbody>
+</table>
+
+<blockquote>
+<strong>結論：時価総額100億円に必要な売上水準</strong><br><br>
+<strong>パターンA（高利益率 &times; PER評価）</strong>：営業利益5億円 &times; PER 20x = 100億円 → 利益率50%なら売上<strong>10億円</strong>で達成<br>
+<strong>パターンB（成長率 &times; PSR評価）</strong>：売上10〜20億円 &times; PSR 5〜10x = 50〜200億円 → 売上<strong>10〜20億円</strong>で到達圏<br>
+<strong>パターンC（AI &times; プラットフォーム評価）</strong>：Mercor型のAI人材プラットフォームに転換した場合、売上数億円でもVC評価で100億円到達の可能性<br><br>
+<strong>最も確実なパス：パターンA（売上10億円 &times; 利益率50% &times; PER 20x）</strong>
+</blockquote>
+
+<hr>
+
+<!-- ===== 5. AI AUTOMATION ===== -->
+<h2>5. AI活用による業務自動化の設計</h2>
+
+<h3>5-1. CA（キャリアアドバイザー）業務のAI代替可能性</h3>
+
+<table>
+  <thead>
+    <tr><th>CA業務</th><th>AI代替度</th><th>具体的アプローチ</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>レジュメスクリーニング</td><td class="num">90〜95%</td><td>AI解析による自動スコアリング・ランキング</td></tr>
+    <tr><td>企業マッチング</td><td class="num">80〜85%</td><td>NLPベースのスキル・経験・志向性マッチング</td></tr>
+    <tr><td>面談スケジューリング</td><td class="num">90%+</td><td>会話型AIによる自動調整</td></tr>
+    <tr><td>初回カウンセリング</td><td class="num">70〜80%</td><td>AI問診 → 人間CAへのエスカレーション判定</td></tr>
+    <tr><td>ケース面接コーチング</td><td class="num">60〜70%</td><td>AI練習パートナー → 人間講師によるフィードバック</td></tr>
+    <tr><td>候補者フォローアップ</td><td class="num">75〜80%</td><td>自動ステータス更新・リマインダー</td></tr>
+    <tr><td>市場・年収データ分析</td><td class="num">85〜90%</td><td>リアルタイム報酬ベンチマーク提供</td></tr>
+  </tbody>
+</table>
+<div class="table-caption">出典：HeroHunt、DemandSage、AI Recruitment Statistics 2026</div>
+
+<h4>人間が不可欠な領域（AIで代替不可能）</h4>
+<ul>
+  <li><strong>深い信頼関係の構築</strong>：ラポール形成、非言語コミュニケーション、共感</li>
+  <li><strong>キャリアの意思決定支援</strong>：人生の転機における相談相手としての役割</li>
+  <li><strong>ポテンシャルの見極め</strong>：スペック以上の成長可能性・コーチャビリティの判断</li>
+  <li><strong>倫理的判断</strong>：カウンターオファー対応、社内政治への助言、機密情報の取り扱い</li>
+  <li><strong>組織文化の理解</strong>：「この人はこのファームで活躍できるか」の直感的判断</li>
+</ul>
+
+<p><span class="label-estimate">推定</span> CA業務の<strong>60〜70%をAIが代替</strong>し、残りの30〜40%（関係構築・意思決定支援・ポテンシャル見極め）を人間が担う<strong>「AI CA + Human Expert」ハイブリッドモデル</strong>がStrategistsの最適解である。これにより、1人のCA（業務委託）が従来の3〜5人分のキャパシティを持つ。</p>
+
+<h3>5-2. AI活用による開発体制（エンジニア組織ゼロ）</h3>
+
+<div class="chart-wrapper">
+  <div class="chart-title">図表2：従来型 vs AI-First 開発コスト比較</div>
+  <canvas id="chartDevCost"></canvas>
+  <div class="chart-source">推定：各種ベンチマーク。Claude Code月額$200、エンジニア年収800万円想定。</div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>項目</th><th>従来型（エンジニア組織あり）</th><th>トップティア（Claude Code）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>エンジニア人件費</td><td class="num">3,200〜8,000万円/年（4〜10名）</td><td class="num">0円</td></tr>
+    <tr><td>AIツール費</td><td class="num">0〜50万円/年</td><td class="num">~30万円/年（Claude Max）</td></tr>
+    <tr><td>開発責任者</td><td>CTO（年収1,500〜2,500万円）</td><td>CEO自身（追加コスト0）</td></tr>
+    <tr><td>開発スピード</td><td>標準</td><td>Claude Codeでコードの70〜90%を自動生成</td></tr>
+    <tr><td>年間開発コスト合計</td><td class="num"><strong>5,000万〜1億円</strong></td><td class="num"><strong>~30万円</strong></td></tr>
+  </tbody>
+</table>
+<div class="table-caption">Claude Code：Anthropic CEO Dario Amodeiは2026年中に「ソロ・ユニコーン（1人で時価総額$1B企業を構築）」が出現すると予測。</div>
+
+<hr>
+
+<!-- ===== 6. TEAM DESIGN ===== -->
+<h2>6. 理想的なチーム設計</h2>
+
+<p>トップティアの「超少数精鋭モデル」を実現しつつ、時価総額100億円に必要な機能を備えるチームを設計する。正社員は<strong>最大3〜5名</strong>、業務委託とAIエージェントで残りの機能をカバーする。</p>
+
+<h3>6-1. 創業コアチーム（正社員 3〜5名）</h3>
+
+<div class="team-card">
+  <h4>CEO / CPO：山本 雄大</h4>
+  <span class="role">プロダクト &amp; ビジョン</span>
+  <p>要件定義→デザイン→Claude Codeコーディングまで一気通貫。プロダクトの全権限を持つ。VCとの対話・資金調達もCEOが主導。スピークバディでの調達経験を活かす。</p>
+  <p><strong>担当領域</strong>：プロダクト開発、AI活用戦略、資金調達、全社戦略</p>
+</div>
+
+<div class="team-card">
+  <h4>COO / 事業開発責任者</h4>
+  <span class="role">理想像：戦略コンサルティングファーム出身（MBB or BIG4）&times; 起業経験者</span>
+  <p>30〜35歳、マッキンゼーまたはBCG等で3〜5年の実務経験後、自ら起業または事業責任者を経験した人材。コンサル業界のネットワーク &times; 事業運営の実行力を兼備する。</p>
+  <p><strong>担当領域</strong>：事業運営、KPI管理、企業との法人営業、パートナーシップ拡大（MyVision連携含む）</p>
+  <p><strong>参考事例</strong>：Kaonavi共同創業者の佐藤寛之氏（リンクアンドモチベーション→Simplex→Kaonavi COO→CEO）</p>
+</div>
+
+<div class="team-card">
+  <h4>CFO / 資金調達責任者</h4>
+  <span class="role">理想像：投資銀行 or VC出身 &times; スタートアップ経験</span>
+  <p>28〜35歳、ゴールドマン・サックス / モルガン・スタンレー / みずほ証券等のIBD出身、またはVC（ジャフコ、グロービス、グローバルブレイン等）出身。IPOプロセスを熟知していること。</p>
+  <p><strong>担当領域</strong>：財務戦略、資金調達（シード→シリーズA→B）、IPO準備、バリュエーション最大化</p>
+  <p><strong>参考事例</strong>：BizReach/Visional創業者の南壮一郎氏（モルガン・スタンレーIBD出身）</p>
+</div>
+
+<div class="team-card">
+  <h4>事業開発 / マーケティング責任者（任意：業務委託 or 正社員）</h4>
+  <span class="role">理想像：人材紹介事業経験者 &times; デジタルマーケティング</span>
+  <p>30〜40歳、リクルート / パーソル / JAC / エン・ジャパン等で人材紹介事業の実務経験5年以上。デジタルマーケティング（SEO、リスティング、コンテンツ）にも強みがあれば最良。</p>
+  <p><strong>担当領域</strong>：人材紹介事業のオペレーション設計、求人ネットワーク構築、集客戦略</p>
+</div>
+
+<h3>6-2. AI Advisory Board（AIチームメンバー）</h3>
+
+<p>ユーザーのご要望に基づき、以下のAIエージェントを意思決定プロセスに常時組み込む。各AIは特定のペルソナと専門性を持ち、戦略策定・サービス設計において多角的な視点を提供する。</p>
+
+<div class="team-card">
+  <h4>AI戦略コンサルタント</h4>
+  <span class="role">AI Advisory</span><span class="ai-badge">Claude Opus</span>
+  <p>マッキンゼー的な構造化思考で市場分析・戦略オプション評価・競合分析を実施。MECE分析、仮説検証アプローチで事業判断を支援。</p>
+  <p><strong>活用場面</strong>：新規事業検討、市場参入判断、競合戦略の逆算、VC向けストーリー構築</p>
+</div>
+
+<div class="team-card">
+  <h4>AI VCアナリスト</h4>
+  <span class="role">AI Advisory</span><span class="ai-badge">Claude Opus</span>
+  <p>VC投資家の視点でバリュエーション・ユニットエコノミクス・成長率を評価。資金調達の最適タイミング・条件交渉のシミュレーションを実施。</p>
+  <p><strong>活用場面</strong>：資金調達戦略、KPI設計、ピッチデック作成、バリュエーション交渉準備</p>
+</div>
+
+<div class="team-card">
+  <h4>AI人材紹介業エキスパート</h4>
+  <span class="role">AI Advisory</span><span class="ai-badge">Claude Opus</span>
+  <p>人材紹介業20年のベテランCAの知見を再現。業界の慣習、コンサルファームの内部事情、候補者心理を踏まえたオペレーション設計を支援。</p>
+  <p><strong>活用場面</strong>：CA業務フロー設計、面接対策コンテンツ開発、ファーム別攻略戦略、紹介手数料交渉</p>
+</div>
+
+<div class="team-card">
+  <h4>AI転職者ペルソナ</h4>
+  <span class="role">AI Advisory</span><span class="ai-badge">Claude Opus</span>
+  <p>コンサルファームへの転職を考えている28歳の事業会社勤務者をペルソナとして設定。ユーザー目線でのサービス体験・UI/UX・不安要素・意思決定プロセスをシミュレーション。</p>
+  <p><strong>活用場面</strong>：サービスUX改善、ランディングページ最適化、コンテンツ企画、カスタマージャーニー設計</p>
+</div>
+
+<h3>6-3. 業務委託ネットワーク</h3>
+
+<table>
+  <thead>
+    <tr><th>機能</th><th>想定人数</th><th>報酬体系</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>CA（キャリアアドバイザー）</td><td class="num">3〜10名</td><td>成約連動型（フィーの20〜30%）</td></tr>
+    <tr><td>ケース面接講師</td><td class="num">5〜15名</td><td>セッション単価</td></tr>
+    <tr><td>コンテンツライター</td><td class="num">2〜5名</td><td>記事単価</td></tr>
+    <tr><td>デザイナー</td><td class="num">1〜2名</td><td>プロジェクト単価</td></tr>
+    <tr><td>マーケティング</td><td class="num">1〜3名</td><td>月額 + 成果連動</td></tr>
+  </tbody>
+</table>
+<div class="table-caption">業務委託中心モデルにより、固定費を最小化しつつスケーラブルなオペレーションを実現。</div>
+
+<hr>
+
+<!-- ===== 7. FINANCIAL PLAN ===== -->
+<h2>7. 財務計画 &amp; 時価総額100億円ロードマップ</h2>
+
+<h3>7-1. 売上計画（3ヶ年）</h3>
+
+<div class="chart-wrapper">
+  <div class="chart-title">図表3：トップティア売上・利益計画（2026年〜2030年）</div>
+  <canvas id="chartRevenuePlan"></canvas>
+  <div class="chart-source">内部データ・計画値。2025年実績を起点に策定。</div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>年度</th><th>売上高</th><th>営業利益</th><th>利益率</th><th>主要ドライバー</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2025年（実績）</td><td class="num">5,300万円</td><td class="num">~2,650万円</td><td class="num">~50%</td><td>スクール + MyVision連携</td></tr>
+    <tr><td>2026年（計画）</td><td class="num"><strong>1.5億円</strong></td><td class="num">7,500万円</td><td class="num">50%</td><td>人材紹介本格化、広告強化</td></tr>
+    <tr><td>2027年（計画）</td><td class="num"><strong>5億円</strong></td><td class="num">2.5億円</td><td class="num">50%</td><td>自社求人NW構築、AI CA導入</td></tr>
+    <tr><td>2028年（計画）</td><td class="num"><strong>12億円</strong></td><td class="num">5.5億円</td><td class="num">46%</td><td>プラットフォーム化、シリーズB</td></tr>
+    <tr><td>2029年（計画）</td><td class="num"><strong>20億円</strong></td><td class="num">9億円</td><td class="num">45%</td><td>IPO準備、マルチバーティカル</td></tr>
+    <tr><td>2030年（計画）</td><td class="num"><strong>35億円</strong></td><td class="num">15億円</td><td class="num">43%</td><td>IPO or 評価額100億円+</td></tr>
+  </tbody>
+</table>
+
+<h3>7-2. バリュエーション逆算</h3>
+
+<div class="kpi-grid">
+  <div class="kpi-box">
+    <div class="kpi-value">10億円</div>
+    <div class="kpi-label">売上で100億円到達<br>（PSR 10x）</div>
+  </div>
+  <div class="kpi-box">
+    <div class="kpi-value">5億円</div>
+    <div class="kpi-label">営業利益で100億円到達<br>（PER 20x）</div>
+  </div>
+  <div class="kpi-box">
+    <div class="kpi-value">2028年</div>
+    <div class="kpi-label">到達想定年</div>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>評価手法</th><th>必要条件</th><th>到達想定</th><th>確度</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>PER 20x</td><td>営業利益5億円（売上10億円 &times; 利益率50%）</td><td>2028年</td><td>高</td></tr>
+    <tr><td>PSR 5x</td><td>売上20億円</td><td>2029年</td><td>中〜高</td></tr>
+    <tr><td>PSR 10x（成長プレミアム）</td><td>売上10億円 + 年率100%+成長</td><td>2027〜2028年</td><td>中</td></tr>
+    <tr><td>VC評価（非上場）</td><td>売上5億円 + AI &times; 成長率200%+</td><td>2027年（シリーズA時）</td><td>中</td></tr>
+  </tbody>
+</table>
+
+<p><span class="label-target">目標</span> <strong>最も確実なパスは、2028年に売上12億円 &times; 営業利益5.5億円を達成し、PER 18〜22xで時価総額100〜120億円のバリュエーションを確立すること</strong>。これはムービン（売上38億円、時価総額~160億円、PSR 4.2x）よりも資本効率の高い到達経路である。</p>
+
+<h3>7-3. 資金調達計画</h3>
+
+<table>
+  <thead>
+    <tr><th>ラウンド</th><th>時期</th><th>調達額</th><th>プレバリュエーション</th><th>希釈率</th><th>用途</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>シード</td><td>2026年Q3〜Q4</td><td class="num">5,000万〜1億円</td><td class="num">3〜5億円</td><td class="num">10〜20%</td><td>マーケ投資、コアチーム採用</td></tr>
+    <tr><td>シリーズA</td><td>2027年Q3〜Q4</td><td class="num">3〜5億円</td><td class="num">20〜30億円</td><td class="num">10〜20%</td><td>AI CAプラットフォーム開発、スケーリング</td></tr>
+    <tr><td>シリーズB</td><td>2028年Q3〜Q4</td><td class="num">10〜15億円</td><td class="num">80〜120億円</td><td class="num">10〜15%</td><td>マルチバーティカル展開、IPO準備</td></tr>
+  </tbody>
+</table>
+<div class="table-caption">希釈率は概算。実際のラウンド条件は事業進捗とマーケット環境に依存。</div>
+
+<hr>
+
+<!-- ===== 8. GROWTH ROADMAP ===== -->
+<h2>8. フェーズ別成長戦略</h2>
+
+<div class="phase-box">
+<h4>Phase 1（2026年）：基盤確立 &amp; プロダクト完成</h4>
+<p><strong>売上目標：1.5億円　正社員：1〜3名</strong></p>
+<ul>
+  <li>自社システム（InVision同等+α）の完成・運用開始</li>
+  <li>月間売上1,000〜1,500万円の安定化</li>
+  <li>COO候補の採用（戦略コンサル出身 &times; 起業経験者）</li>
+  <li>MyVision連携の拡大（月間紹介件数3x）</li>
+  <li>SEO・YouTube・Xでのオーガニック集客基盤構築</li>
+  <li>シード資金調達の実行（5,000万〜1億円）</li>
+  <li><strong>ケース面接AI練習ツール</strong>のβリリース</li>
+</ul>
+</div>
+
+<div class="phase-box">
+<h4>Phase 2（2027年）：スケーリング &amp; AI CA導入</h4>
+<p><strong>売上目標：5億円　正社員：3〜5名</strong></p>
+<ul>
+  <li>AI CAシステムの本番投入（初回カウンセリング自動化）</li>
+  <li>自社求人ネットワークの構築（MyVision依存度の段階的低減）</li>
+  <li>業務委託CA 10名体制（AI CA補助により1人あたり生産性3x）</li>
+  <li>CFO採用（IB or VC出身、IPO経験者）</li>
+  <li>シリーズA（3〜5億円、バリュエーション20〜30億円）</li>
+  <li>アフィリエイト・リスティング広告の本格展開</li>
+  <li>新卒コンサル転職領域の確立</li>
+</ul>
+</div>
+
+<div class="phase-box">
+<h4>Phase 3（2028年）：プラットフォーム化 &amp; 100億円到達</h4>
+<p><strong>売上目標：12億円　正社員：5名以下</strong></p>
+<ul>
+  <li>「ケース面接対策 &times; AI &times; 人材紹介」のカテゴリーキング確立</li>
+  <li>AI面接練習プラットフォームの外部提供（BtoBtoCモデル）</li>
+  <li>マルチバーティカル（コンサル→金融→IT→スタートアップ転職）</li>
+  <li>シリーズB（10〜15億円、プレバリュエーション80〜120億円）→ <strong>時価総額100億円到達</strong></li>
+  <li>IPO準備開始（監査法人選定、内部統制構築）</li>
+  <li>海外展開の検討（英語圏のコンサル転職市場）</li>
+</ul>
+</div>
+
+<div class="phase-box">
+<h4>Phase 4（2029〜2030年）：IPO &amp; Beyond</h4>
+<p><strong>売上目標：20〜35億円　正社員：5〜10名</strong></p>
+<ul>
+  <li>東証グロース市場IPO（時価総額150〜300億円レンジ）</li>
+  <li>or 戦略的M&amp;A optionality</li>
+  <li>ムービン（160億円）・アクシス（80億円）を上回る時価総額の確立</li>
+  <li>AI人材プラットフォームとしてのグローバル展開</li>
+  <li>「正社員10名以下で上場」という前例のない達成</li>
+</ul>
+</div>
+
+<hr>
+
+<!-- ===== 9. UNIT ECONOMICS ===== -->
+<h2>9. ユニットエコノミクス &amp; 収益構造</h2>
+
+<h3>9-1. 収益モデルの構成</h3>
+
+<div class="chart-wrapper">
+  <div class="chart-title">図表4：トップティア 収益構成（2028年計画）</div>
+  <canvas id="chartRevenueBreakdown"></canvas>
+  <div class="chart-source">計画値。スクール + 人材紹介 + AIプラットフォームの3本柱。</div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>収益源</th><th>2026年</th><th>2027年</th><th>2028年</th><th>粗利率</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>ケース面接対策スクール</td><td class="num">8,000万円</td><td class="num">1.5億円</td><td class="num">3億円</td><td class="num">85%+</td></tr>
+    <tr><td>人材紹介（成功報酬）</td><td class="num">5,000万円</td><td class="num">2.5億円</td><td class="num">7億円</td><td class="num">90%+</td></tr>
+    <tr><td>AI面接練習プラットフォーム</td><td class="num">0</td><td class="num">5,000万円</td><td class="num">1.5億円</td><td class="num">95%+</td></tr>
+    <tr><td>コンテンツ・教材販売</td><td class="num">2,000万円</td><td class="num">5,000万円</td><td class="num">5,000万円</td><td class="num">95%+</td></tr>
+    <tr><td><strong>合計</strong></td><td class="num"><strong>1.5億円</strong></td><td class="num"><strong>5億円</strong></td><td class="num"><strong>12億円</strong></td><td class="num"><strong>88%</strong></td></tr>
+  </tbody>
+</table>
+
+<h3>9-2. 1顧客あたりの経済性</h3>
+
+<table>
+  <thead>
+    <tr><th>指標</th><th>現在</th><th>2028年目標</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>LTV（スクール単体）</td><td class="num">30〜43万円</td><td class="num">40〜50万円</td></tr>
+    <tr><td>LTV（スクール + 人材紹介）</td><td class="num">50〜64万円</td><td class="num">80〜120万円</td></tr>
+    <tr><td>CAC（顧客獲得コスト）</td><td class="num">3〜10万円</td><td class="num">5〜15万円</td></tr>
+    <tr><td>LTV/CAC比率</td><td class="num">5〜20x</td><td class="num">8〜15x</td></tr>
+    <tr><td>成約率（有料転換率）</td><td class="num">50〜60%</td><td class="num">55〜65%</td></tr>
+    <tr><td>人材紹介併用率</td><td class="num">20〜78%</td><td class="num">60〜80%</td></tr>
+  </tbody>
+</table>
+<div class="table-caption">LTV/CAC 8x以上は、VCが求める健全な水準（通常3x以上が基準）を大きく上回る。</div>
+
+<h3>9-3. MyVision &amp; ムービンとの構造比較</h3>
+
+<div class="chart-wrapper">
+  <div class="chart-title">図表5：3社構造比較（2028年計画値含む）</div>
+  <canvas id="chartTripleCompare"></canvas>
+  <div class="chart-source">ムービン：IRBank E40925。MyVision：推定。トップティア：計画値。</div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>指標</th><th>ムービン</th><th>MyVision</th><th>トップティア（2028年）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>売上高</td><td class="num">38.0億円</td><td class="num">20〜40億円</td><td class="num">12億円</td></tr>
+    <tr><td>営業利益率</td><td class="num">46%</td><td class="num">ほぼ0%</td><td class="num"><strong>46%</strong></td></tr>
+    <tr><td>正社員数</td><td class="num">109名</td><td class="num">303名</td><td class="num"><strong>5名以下</strong></td></tr>
+    <tr><td>1人あたり売上</td><td class="num">3,490万円</td><td class="num">~2,500万円</td><td class="num"><strong>2.4億円</strong></td></tr>
+    <tr><td>年間人件費</td><td class="num">~15億円</td><td class="num">~45億円</td><td class="num"><strong>~5,000万円</strong></td></tr>
+    <tr><td>マーケ費用</td><td class="num">最小限</td><td class="num">6〜10億円</td><td class="num">1〜2億円</td></tr>
+    <tr><td>ビジネスモデル</td><td>人材紹介のみ</td><td>人材紹介のみ</td><td><strong>スクール + 紹介 + AI PF</strong></td></tr>
+    <tr><td>テクノロジー</td><td>自社メディア（30年蓄積）</td><td>InVision</td><td><strong>Claude Code &times; AI CA</strong></td></tr>
+  </tbody>
+</table>
+
+<p><span class="label-target">目標</span> トップティアの<strong>1人あたり売上2.4億円</strong>は、ムービン（3,490万円）の<strong>約7倍</strong>。これがAI活用 &times; 超少数精鋭モデルの真価である。</p>
+
+<hr>
+
+<!-- ===== 10. RISKS ===== -->
+<h2>10. リスク分析</h2>
+
+<h3>市場リスク</h3>
+<ul>
+  <li><strong>コンサルファームの採用抑制</strong>：グローバルBIG4の人員増加率は+0.3%に鈍化。PwC 5,600名・アクセンチュア10,000名超の削減が報じられている。1〜1.5年後に日本市場への波及リスクあり</li>
+  <li><strong>コンサル転職市場の縮小</strong>：AI活用による生産性向上で、ファーム側の大量採用ニーズが減退する構造的リスク</li>
+</ul>
+
+<h3>事業固有リスク</h3>
+<ul>
+  <li><strong>キーパーソンリスク</strong>：正社員1名（CEO）への極度の依存。CEOの離脱は事業継続に致命的影響を与える</li>
+  <li><strong>MyVision依存</strong>：人材紹介パイプラインの相当部分をMyVisionに依存。Phase 2での自社求人NW構築が最重要課題</li>
+  <li><strong>業務委託モデルの脆弱性</strong>：優秀なCA・講師の離脱リスク、品質管理の困難さ、ノウハウの蓄積が個人に帰属するリスク</li>
+  <li><strong>AI開発の技術リスク</strong>：Claude Code等の仕様変更・価格改定への依存。APIベンダーロックインのリスク</li>
+</ul>
+
+<h3>競合リスク</h3>
+<ul>
+  <li><strong>MyVisionの対抗</strong>：303名体制とIPO資金を活用し、同様のスクール事業に参入する可能性</li>
+  <li><strong>ムービンの牙城</strong>：30年間の実績・10.5万人のDB・9割以上のファームとの取引関係は、短期間では模倣不可能</li>
+  <li><strong>AI CA領域の競合</strong>：JAPAN AI HR等のAI人材マッチングスタートアップの参入</li>
+</ul>
+
+<h3>リスク緩和策</h3>
+<table>
+  <thead>
+    <tr><th>リスク</th><th>緩和策</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>キーパーソンリスク</td><td>COO・CFOの早期採用で権限分散。CEO依存度の計画的低減</td></tr>
+    <tr><td>MyVision依存</td><td>2027年末までに自社求人NWで売上の50%以上を自立化</td></tr>
+    <tr><td>市場縮小</td><td>マルチバーティカル化（コンサル→金融→IT→スタートアップ）でリスク分散</td></tr>
+    <tr><td>AI技術依存</td><td>マルチLLM対応設計。Anthropic以外のモデルへの切替可能性を確保</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- ===== 11. CONCLUSION ===== -->
+<h2>11. 結論：なぜトップティアが勝てるのか</h2>
+
+<blockquote>
+<strong>3つの構造的優位性</strong><br><br>
+<strong>1. コスト構造の革命</strong>：正社員5名以下で売上12億円。人件費は競合の1/30〜1/90。エンジニア組織ゼロ、Claude Codeで開発コスト年間30万円。<br><br>
+<strong>2. ビジネスモデルの複合性</strong>：スクール（高マージン教育）+ 人材紹介（成功報酬）+ AI PF（SaaS型）の3本柱。LTV/CAC 8〜15xの圧倒的ユニットエコノミクス。<br><br>
+<strong>3. 時代の追い風</strong>：Mercor（$10B）が証明した「AI &times; 人材」の巨大バリュエーション。Claude Codeの民主化によるエンジニア不要の開発。コンサル市場の構造変化による新規参入機会。
+</blockquote>
+
+<div class="highlight-box">
+<h3>最終メッセージ</h3>
+<p>ムービンは30年かけて時価総額160億円に到達した。MyVisionは300名と50億円の投資で利益率0%である。<br><br>
+トップティアは、<strong>正社員5名以下・AI活用・複合ビジネスモデル</strong>で、<strong>2028年に時価総額100億円</strong>を目指す。これは夢物語ではない。Mercorが22歳の3名で$10Bを達成し、Claude Codeが6ヶ月で$1B ARRに到達した2025〜2026年においては、<strong>この計画は保守的ですらある</strong>。</p>
+</div>
+
+<hr>
+
+<!-- ===== FOOTER ===== -->
+<div class="report-footer">
+  <p>本レポートは公開情報、内部データ、およびAIリサーチに基づく戦略分析である。<span class="label-fact">ファクト</span>は公式発表・IR資料・確認済み事実、<span class="label-estimate">推定</span>は公開情報からの合理的推計、<span class="label-target">目標</span>は計画値・戦略目標を示す。財務計画は複数の前提条件に依存しており、実際の結果は計画と大きく異なる可能性がある。</p>
+  <p>主要出典：TechCrunch、CNBC（Mercor Series C）、Anthropic公式（Claude Code ARR）、SaaStr（Anthropic ARR $14B）、IRBank（ムービン E40925、アクシス E38452）、THE BRIDGE・Tracxn（SpeakBuddy調達）、consul.global（コンサル業界データ）、DemandSage・HeroHunt（AI Recruitment Statistics）</p>
+  <p>作成日：2026年2月20日 ｜ CONFIDENTIAL</p>
+</div>
+
+</div><!-- .container -->
+
+<!-- ===== CHARTS ===== -->
+<script>
+const cPrimary = 'rgba(13,33,55,0.85)';
+const cAccent1 = 'rgba(74,124,89,0.85)';
+const cAccent2 = 'rgba(197,48,48,0.9)';
+const cAccent3 = 'rgba(107,70,193,0.85)';
+const cLight = 'rgba(13,33,55,0.15)';
+
+// ========================================
+// Chart 1: Competitors Bubble/Bar Chart
+// ========================================
+new Chart(document.getElementById('chartCompetitors'), {
+  type: 'bar',
+  data: {
+    labels: ['ムービン', 'ビジョナル', 'アクシス', 'タイミー', 'MyVision\n(推定)', 'トップティア\n(2028計画)'],
+    datasets: [
+      {
+        label: '売上高（億円）',
+        data: [38, 700, 52.7, 300, 30, 12],
+        backgroundColor: cPrimary,
+        barPercentage: 0.5,
+        yAxisID: 'y'
+      },
+      {
+        type: 'line',
+        label: '営業利益率（%）',
+        data: [46, 25, 4, 10, 1, 46],
+        borderColor: cAccent2,
+        backgroundColor: cAccent2,
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: cAccent2,
+        tension: 0,
+        yAxisID: 'y1'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 2.0,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { position: 'top', labels: { usePointStyle: true, padding: 12, font: { size: 11 } } },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) {
+            if (ctx.dataset.yAxisID === 'y1') return '利益率 ' + ctx.parsed.y + '%';
+            return '売上 ' + ctx.parsed.y + '億円';
+          }
+        }
+      }
+    },
+    scales: {
+      y: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: '売上高（億円）' }, grid: { color: '#eee' } },
+      y1: { type: 'linear', position: 'right', beginAtZero: true, max: 60, title: { display: true, text: '営業利益率（%）' }, grid: { drawOnChartArea: false } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// ========================================
+// Chart 2: Dev Cost Comparison
+// ========================================
+new Chart(document.getElementById('chartDevCost'), {
+  type: 'bar',
+  data: {
+    labels: ['エンジニア人件費', 'AIツール費', 'CTO人件費', '年間合計'],
+    datasets: [
+      {
+        label: '従来型（万円/年）',
+        data: [5600, 25, 2000, 7625],
+        backgroundColor: 'rgba(150,150,150,0.7)',
+        barPercentage: 0.4
+      },
+      {
+        label: 'トップティア（万円/年）',
+        data: [0, 30, 0, 30],
+        backgroundColor: cAccent1,
+        barPercentage: 0.4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 2.0,
+    indexAxis: 'y',
+    plugins: {
+      legend: { position: 'top', labels: { usePointStyle: true, padding: 12, font: { size: 11 } } },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) { return ctx.dataset.label + ': ' + ctx.parsed.x.toLocaleString() + '万円'; }
+        }
+      }
+    },
+    scales: {
+      x: { beginAtZero: true, title: { display: true, text: '年間コスト（万円）' }, grid: { color: '#eee' } },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+// ========================================
+// Chart 3: Revenue Plan
+// ========================================
+new Chart(document.getElementById('chartRevenuePlan'), {
+  type: 'bar',
+  data: {
+    labels: ['2025\n(実績)', '2026\n(計画)', '2027\n(計画)', '2028\n(計画)', '2029\n(計画)', '2030\n(計画)'],
+    datasets: [
+      {
+        label: '売上高（億円）',
+        data: [0.53, 1.5, 5, 12, 20, 35],
+        backgroundColor: cPrimary,
+        barPercentage: 0.5,
+        yAxisID: 'y'
+      },
+      {
+        label: '営業利益（億円）',
+        data: [0.27, 0.75, 2.5, 5.5, 9, 15],
+        backgroundColor: cAccent1,
+        barPercentage: 0.5,
+        yAxisID: 'y'
+      },
+      {
+        type: 'line',
+        label: '営業利益率（%）',
+        data: [50, 50, 50, 46, 45, 43],
+        borderColor: cAccent2,
+        backgroundColor: cAccent2,
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: cAccent2,
+        tension: 0,
+        yAxisID: 'y1'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 2.0,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { position: 'top', labels: { usePointStyle: true, padding: 12, font: { size: 11 } } },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) {
+            if (ctx.dataset.yAxisID === 'y1') return '利益率 ' + ctx.parsed.y + '%';
+            return ctx.dataset.label + ' ' + ctx.parsed.y + '億円';
+          }
+        }
+      }
+    },
+    scales: {
+      y: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: '金額（億円）' }, grid: { color: '#eee' } },
+      y1: { type: 'linear', position: 'right', beginAtZero: true, max: 60, title: { display: true, text: '営業利益率（%）' }, grid: { drawOnChartArea: false } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// ========================================
+// Chart 4: Revenue Breakdown 2028
+// ========================================
+new Chart(document.getElementById('chartRevenueBreakdown'), {
+  type: 'doughnut',
+  data: {
+    labels: [
+      '人材紹介 58%',
+      'スクール 25%',
+      'AI PF 13%',
+      'コンテンツ 4%'
+    ],
+    datasets: [{
+      data: [7, 3, 1.5, 0.5],
+      backgroundColor: [cPrimary, cAccent1, cAccent3, 'rgba(200,160,60,0.85)'],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 1.6,
+    plugins: {
+      legend: { position: 'right', labels: { padding: 14, font: { size: 12 } } },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) { return ctx.label + '（' + ctx.parsed + '億円）'; }
+        }
+      }
+    }
+  }
+});
+
+// ========================================
+// Chart 5: Triple Comparison
+// ========================================
+new Chart(document.getElementById('chartTripleCompare'), {
+  type: 'bar',
+  data: {
+    labels: ['ムービン', 'MyVision\n(推定)', 'トップティア\n(2028計画)'],
+    datasets: [
+      {
+        label: '売上高（億円）',
+        data: [38, 30, 12],
+        backgroundColor: cPrimary,
+        barPercentage: 0.35,
+        yAxisID: 'y'
+      },
+      {
+        label: '正社員数',
+        data: [109, 303, 5],
+        backgroundColor: cAccent1,
+        barPercentage: 0.35,
+        yAxisID: 'y'
+      },
+      {
+        type: 'line',
+        label: '営業利益率（%）',
+        data: [46, 1, 46],
+        borderColor: cAccent2,
+        backgroundColor: cAccent2,
+        borderWidth: 2.5,
+        pointRadius: 6,
+        pointBackgroundColor: cAccent2,
+        tension: 0,
+        yAxisID: 'y1'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 2.0,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { position: 'top', labels: { usePointStyle: true, padding: 12, font: { size: 11 } } },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) {
+            if (ctx.dataset.yAxisID === 'y1') return '利益率 ' + ctx.parsed.y + '%';
+            if (ctx.dataset.label === '正社員数') return '正社員 ' + ctx.parsed.y + '名';
+            return '売上 ' + ctx.parsed.y + '億円';
+          }
+        }
+      }
+    },
+    scales: {
+      y: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: '売上（億円）/ 従業員数' }, grid: { color: '#eee' } },
+      y1: { type: 'linear', position: 'right', beginAtZero: true, max: 60, title: { display: true, text: '利益率（%）' }, grid: { drawOnChartArea: false } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
